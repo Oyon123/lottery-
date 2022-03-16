@@ -1,3 +1,5 @@
 <?php
-echo "Index.html";
+
+include_once("Index.html")
+
 ?>
