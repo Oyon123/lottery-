@@ -20,7 +20,61 @@
 
   </div>
 
-<?php include 'footer.php';?>
+  <div class="cont">
+    <h1>LET'S CHECK YOUR LUCK</h1>
+    <h3>Give Three Number</h3>
+
+
+    <div class="number-input">
+      <form>
+        <input type="number" class="input1" />
+        <input type="number" class="input2" />
+        <input type="number" class="input3" />
+        <input type="submit" value="Submit" class="input-submit" />
+        <input type="submit" value="Reset" class="form-reset" />
+      </form>
+    </div>
+
+    <div class="first-round">
+      <p>
+        <span class="r1n1">0</span> | <span class="r1n2">0</span> |
+        <span class="r1n3">0</span>
+        <input type="button" value="Go to next round" class="r1-finishing" />
+        <span class="r1-finishing-text"></span>
+      </p>
+
+    </div>
+    <div class="second-round">
+      <p>
+        <span class="r2n1">0</span> | <span class="r2n2">0</span> |
+        <span class="r2n3">0</span>
+        <input type="button" value="Go to next round" class="r2-finishing" />
+        <span class="r2-finishing-text"></span>
+      </p>
+
+    </div>
+    <div class="third-round">
+      <p>
+        <span class="r3n1">0</span> | <span class="r3n2">0</span> |
+        <span class="r3n3">0</span>
+        <input type="button" value="SEE THE RESULT" class="r3-finishing" />
+        <span class="r3-finishing-text"></span>
+      </p>
+
+    </div>
+
+    <div>
+      <p class="final-text-out"></p>
+    </div>
+  </div>
+  <ul>
+    <li>You Have to give three numbers .</li>
+    <li>Your numbers will be shuffeled.</li>
+    <li>if you get a same output like x|x|x then you will get $10.</li>
+    <li>if you get a same output like x|x|y or x|y|y then you will lose 10$</li>
+    <li>you have only 3 chances. Then you can see your result.</li>
+  </ul>
+<script src="main.js"></script>
 </body>
 
 </html>
