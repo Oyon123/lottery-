@@ -1,3 +1,3 @@
-c<?php
+<?php
 echo "Index.html";
 ?>
