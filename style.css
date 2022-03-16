@@ -1,121 +1,121 @@
 @import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
- @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@1,100&display=swap");
- @import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@1,100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
 
- .container {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
-  .container .box button,
+.container .box button,
 .container .box h1 {
-    font-family: 'Share Tech Mono', monospace;
+  font-family: 'Share Tech Mono', monospace;
 }
 
-  * {
-    margin: 0px;
-    padding: 0px;
-   
+* {
+  margin: 0px;
+  padding: 0px;
+
   /*border: 1px solid red;*/
 }
 
-  .container {
-    width: 100vw;
-    height: 100vh;
-    background-color: #2A2A2A;
-    position: absolute;
-    overflow: hidden;
+.container {
+  width: 0vh;
+  height: 100vh;
+  background-color: #2A2A2A;
+  position: absolute;
+  overflow: hidden;
 }
+
+.container .box {
+  width: 100%;
+  height: 300px;
+  padding: 10px;
+}
+
+.container .box h1 {
+  color: whitesmoke;
+  text-shadow: 2px 2px #7C00FF;
+  font-size: 50px;
+  text-align: left;
+}
+
+.container .box p {
+  width: 300px;
+  color: #D7D7D7;
+  font-family: 'Roboto Mono', monospace;
+  margin-top: 15px;
+}
+
+.container .box button {
+
+  /* Variables */
+  margin-top: 25px;
+  font-size: 17px;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.75em;
+  background: #DDA400;
+}
+
+.container .box .button_top {
+  display: block;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 2px solid #DDA400;
+  border-radius: 0.75em;
+  padding: 0.75em 1.5em;
+  background: #e8e8e8;
+  color: #DDA400;
+  -webkit-transform: translateY(-0.2em);
+  -ms-transform: translateY(-0.2em);
+  transform: translateY(-0.2em);
+  -webkit-transition: -webkit-transform 0.1s ease;
+  transition: -webkit-transform 0.1s ease;
+  transition: transform 0.1s ease;
+  transition: transform 0.1s ease, -webkit-transform 0.1s ease;
+}
+
+.container .box button:hover .button_top {
+
+  /* Pull the button upwards when hovered */
+  -webkit-transform: translateY(-0.33em);
+  -ms-transform: translateY(-0.33em);
+  transform: translateY(-0.33em);
+}
+
+.container .box button:active .button_top {
+
+  /* Push the button downwards when pressed */
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.container {
+  animation: close 1s cubic-bezier(0.77, 0, 0.175, 1) 1;
+}
+
+@keyframes close {
+  0% {
+    width: 100vw;
+  }
+
+  100% {
+    width: 0vw;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+  }
 
   .container .box {
-    width: 100%;
-    height: 300px;
-    padding: 10px;
-}
-
-  .container .box h1 {
-    color: whitesmoke;
-    text-shadow: 2px 2px #7C00FF;
-    font-size: 50px;
-    text-align: left;
-}
-
-  .container .box p {
-    width: 300px;
-    color: #D7D7D7;
-    font-family: 'Roboto Mono', monospace;
-    margin-top: 15px;
-}
-
-  .container .box button {
-   
-  /* Variables */
-    margin-top: 25px;
-    font-size: 17px;
-    font-weight: bold;
-    border: none;
-    border-radius: 0.75em;
-    background: #DDA400;
-}
-
-  .container .box .button_top {
-    display: block;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    border: 2px solid #DDA400;
-    border-radius: 0.75em;
-    padding: 0.75em 1.5em;
-    background: #e8e8e8;
-    color: #DDA400;
-    -webkit-transform: translateY(-0.2em);
-    -ms-transform: translateY(-0.2em);
-    transform: translateY(-0.2em);
-    -webkit-transition: -webkit-transform 0.1s ease;
-    transition: -webkit-transform 0.1s ease;
-    transition: transform 0.1s ease;
-    transition: transform 0.1s ease, -webkit-transform 0.1s ease;
-}
-
-  .container .box button:hover .button_top {
-   
-  /* Pull the button upwards when hovered */
-    -webkit-transform: translateY(-0.33em);
-    -ms-transform: translateY(-0.33em);
-    transform: translateY(-0.33em);
-}
-
-  .container .box button:active .button_top {
-   
-  /* Push the button downwards when pressed */
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
-    transform: translateY(0);
-}
-
-  .container {
-    animation: close 1s cubic-bezier(0.77, 0, 0.175, 1) 1;
-}
-
-  @keyframes clse {
-    0% {
-      width: 100vw;
-  }
-
-    100% {
-      width: 0vw;
-  }
-}
-
-  @media screen and (min-width: 600px) {
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      align-content: center;
-      justify-content: center;
-  }
-
-    .container .box {
-      width: 50%;
+    width: 50%;
   }
 }
