@@ -26,7 +26,6 @@
     background-color: #2A2A2A;
     position: absolute;
     overflow: hidden;
-    z-index: 1;
 }
 
   .container .box {
