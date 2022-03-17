@@ -2,55 +2,66 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@1,100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
 
-.container {
+.container,
+.abc {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
 }
 
 .container .box button,
-.container .box h1 {
+.abc .box button,
+.container .box h1,
+.abc .box h1 {
   font-family: 'Share Tech Mono', monospace;
 }
 
 * {
   margin: 0px;
   padding: 0px;
-
   /*border: 1px solid red;*/
 }
 
-.container {
-  width: 0vh;
+.container,
+.abc {
+  width: 100vw;
   height: 100vh;
   background-color: #2A2A2A;
   position: absolute;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
-.container .box {
-  width: 100%;
+.container .box,
+.abc .box {
+  min-width: 95%;
+  height: 95%;
   height: 300px;
   padding: 10px;
 }
 
-.container .box h1 {
+.container .box h1,
+.abc .box h1 {
+  width: 400px;
   color: whitesmoke;
   text-shadow: 2px 2px #7C00FF;
   font-size: 50px;
   text-align: left;
 }
 
-.container .box p {
-  width: 300px;
+.container .box p,
+.abc .box p {
+  width: 400px;
+  font-size: 20px;
   color: #D7D7D7;
   font-family: 'Roboto Mono', monospace;
   margin-top: 15px;
+  overflow: hidden;
 }
 
-.container .box button {
-
+.container .box button,
+.abc .box button {
   /* Variables */
+  width: 200px;
   margin-top: 25px;
   font-size: 17px;
   font-weight: bold;
@@ -59,7 +70,8 @@
   background: #DDA400;
 }
 
-.container .box .button_top {
+.container .box .button_top,
+.abc .box .button_top {
   display: block;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -77,23 +89,24 @@
   transition: transform 0.1s ease, -webkit-transform 0.1s ease;
 }
 
-.container .box button:hover .button_top {
-
+.container .box button:hover .button_top,
+.abc .box button:hover .button_top {
   /* Pull the button upwards when hovered */
   -webkit-transform: translateY(-0.33em);
   -ms-transform: translateY(-0.33em);
   transform: translateY(-0.33em);
 }
 
-.container .box button:active .button_top {
-
+.container .box button:active .button_top,
+.abc .box button:active .button_top {
   /* Push the button downwards when pressed */
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
 }
 
-.container {
+.abc {
+  width: 0vw;
   animation: close 1s cubic-bezier(0.77, 0, 0.175, 1) 1;
 }
 
@@ -108,14 +121,36 @@
 }
 
 @media screen and (min-width: 600px) {
-  .container {
+
+  .container,
+  .abc {
     display: flex;
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
   }
 
-  .container .box {
-    width: 50%;
+  .container .box,
+  .abc .box {
+    width: 10%;
+  }
+
+  .container .box h1,
+  .abc .box h1 {
+    width: 800px;
+    font-size: 100px;
+  }
+
+  .container .box p,
+  .abc .box p {
+    width: 800px;
+    font-size: 40px;
+  }
+
+  .container .box button,
+  .abc .box button {
+    width: 280px;
+    margin-top: 30px;
+    font-size: 40px;
   }
 }
