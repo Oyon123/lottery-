@@ -4,8 +4,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  <link rel="stylesheet" href="style.css">
+  <title>Sass Template</title>
+  <script src="cdn_modules/jquery@3.6.0/jquery.min.js"></script>
+  <script src="cdn_modules/sass.js@0.11.1/sass.min.js"></script>
+  <script>
+    function compileSCSS() {
+      var sass = new Sass('cdn_modules/sass.js@0.11.1/sass.worker.min.js');
+      $('link[rel="scss"]').each(function() {
+        var href = $(this).attr('href');
+        $.ajax({
+          url: href,
+          dataType: 'text'
+        }).then(function(data) {
+          sass.compile(data, function(result) {
+            $('#css').html(result.text || '');
+            console.log(result)
+          });
+        });
+      });
+    }
+  </script>
+  <style id="css"></style>
+  <link rel="stylesheet" href="sty.ss">
+  <link rel="scss" href="style.scss">
 </head>
 
 <body>
@@ -20,70 +41,31 @@
 
     </div>
   </div>
-
-
-
-  <div class="cont">
-    <h1>LET'S CHECK YOUR LUCK</h1>
-    <h3>Give Three Number</h3>
-
-
-    <div class="number-input">
-      <form>
-        <input type="number" class="input1" />
-        <input type="number" class="input2" />
-        <input type="number" class="input3" />
-        <input type="submit" value="Submit" class="input-submit" />
-        <input type="submit" value="Reset" class="form-reset" />
-      </form>
-    </div>
-
-    <div class="first-round">
-      <p>
-        <span class="r1n1">0</span> | <span class="r1n2">0</span> |
-        <span class="r1n3">0</span>
-        <input type="button" value="Go to next round" class="r1-finishing" />
-        <span class="r1-finishing-text"></span>
-      </p>
-
-    </div>
-    <div class="second-round">
-      <p>
-        <span class="r2n1">0</span> | <span class="r2n2">0</span> |
-        <span class="r2n3">0</span>
-        <input type="button" value="Go to next round" class="r2-finishing" />
-        <span class="r2-finishing-text"></span>
-      </p>
-
-    </div>
-    <div class="third-round">
-      <p>
-        <span class="r3n1">0</span> | <span class="r3n2">0</span> |
-        <span class="r3n3">0</span>
-        <input type="button" value="SEE THE RESULT" class="r3-finishing" />
-        <span class="r3-finishing-text"></span>
-      </p>
-
-    </div>
-
-    <div>
-      <p class="final-text-out"></p>
+  <div class="game-cont">
+    <div class="game-box">
+      <div class="suffle-cont">
+        <div class="suffle-box"><input type="number" name="" id="" maxlength="2"></div>
+        <div class="suffle-box"><input type="number" name="" id=""></div>
+        <div class="suffle-box"><input type="number" name="" id=""></div>
+      </div>
+      <div class="text">
+        <span></span> You <span></span> <span></span>
+      </div>
     </div>
   </div>
 
+  <!--  
   <ul>
     <li>You Have to give three numbers .</li>
     <li>Your numbers will be shuffeled.</li>
     <li>if you get a same output like x|x|x then you will get $10.</li>
     <li>if you get a same output like x|x|y or x|y|y then you will lose 10$</li>
     <li>you have only 3 chances. Then you can see your result.</li>
-  </ul>
-
-
-
-  <script src="game.js"></script>
+  </ul> -->
+  <script>
+    compileSCSS()
+  </script>
   <script src="main.js"></script>
-
 </body>
 
 </html>
