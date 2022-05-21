@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@1,100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+
+
+%flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+%flex-nowrap {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+}
+
+%font {
+  font-family: 'Share Tech Mono', monospace;
+
+}
+
+.container .box button,
+.container .box h1 {
+  font-family: 'Share Tech Mono', monospace;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+
+  /*border: 1px solid red;*/
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #2A2A2A;
+  @extend %flex-nowrap;
+  position: absolute;
+  overflow: hidden;
+
+  .box {
+    width: 100%;
+    height: 300px;
+    padding: 10px;
+
+
+    h1 {
+      width: 100%;
+      color: whitesmoke;
+      text-shadow: 2px 2px #7C00FF;
+      font-size: 50px;
+      text-align: left;
+    }
+
+    p {
+      width: 90%;
+      font-size: 20px;
+      color: #D7D7D7;
+      font-family: 'Roboto Mono', monospace;
+      margin-top: 15px;
+      overflow: hidden;
+    }
+
+    button {
+
+      /* Variables */
+      width: 200px;
+      margin-top: 25px;
+      font-size: 17px;
+      font-weight: bold;
+      border: none;
+      border-radius: 0.75em;
+      background: #DDA400;
+
+    }
+
+    .button_top {
+      display: block;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      border: 2px solid #DDA400;
+      border-radius: 0.75em;
+      padding: 0.75em 1.5em;
+      background: #e8e8e8;
+      color: #DDA400;
+      -webkit-transform: translateY(-0.2em);
+      -ms-transform: translateY(-0.2em);
+      transform: translateY(-0.2em);
+      -webkit-transition: -webkit-transform 0.1s ease;
+      transition: -webkit-transform 0.1s ease;
+      transition: transform 0.1s ease;
+      transition: transform 0.1s ease, -webkit-transform 0.1s ease;
+    }
+
+    button:hover .button_top {
+
+      /* Pull the button upwards when hovered */
+      -webkit-transform: translateY(-0.33em);
+      -ms-transform: translateY(-0.33em);
+      transform: translateY(-0.33em);
+    }
+
+    button:active .button_top {
+
+      /* Push the button downwards when pressed */
+      -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+}
+
+.abc {
+  width: 0vw;
+  @extend .container;
+  animation: close 1s cubic-bezier(0.77, 0, 0.175, 1) 1;
+}
+
+@keyframes close {
+  0% {
+    width: 100vw;
+  }
+
+  100% {
+    width: 0vw;
+  }
+}
+
+.game-cont {
+  width: 100vw;
+  height: 100vh;
+  background-color: #E9B800;
+  @extend %flex-nowrap;
+
+  .game-box {
+
+    .suffle-cont {
+
+      .suffle-box {
+        @extend %flex-wrap;
+
+        .suffle-input {
+
+          input {
+            $value: 110px;
+
+            width: $value;
+            height: $value;
+            caret-color: #00FAD2;
+            text-align: center;
+            font-size: 40px;
+            margin: 5px;
+            outline: none;
+            border: 1px solid gray;
+            border-radius: 2%;
+            box-shadow: 0px 0px 0 #000000;
+            transition: all .500s ease;
+            @extend %font;
+
+            &:focus {
+              box-shadow: 5px 5px 0 #000000;
+              transform: translateY(-0.33em);
+
+              transition: all .500s ease;
+            }
+
+            &:valid {
+              box-shadow: 0px 0px 0 #000000;
+              transform: translateY(0);
+              transition: all .500s ease;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.text {
+  display: flex;
+  align-content: center;
+
+  span {
+    width: 60px;
+    height: 20px;
+    background-color: #eee;
+    border: 1px solid gray;
+    border-radius: 5%;
+    display: inline-block;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .container {
+
+    .box {
+      width: 100%;
+
+      h1 {
+        width: 800px;
+        font-size: 70px;
+      }
+
+      p {
+        width: 800px;
+        font-size: 30px;
+      }
+
+      button {
+        width: 190px;
+        margin-top: 20px;
+        font-size: 30px;
+      }
+    }
+  }
+}
